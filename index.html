@@ -1,1 +1,71 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Knowledge Cultivation · OpenLeaf</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="title">📖 Knowledge Cultivation</h1>
+        <p class="subtitle">Cultivate wisdom in the mystical archive</p>
+      </header>
+
+      <main>
+        <!-- Realm & Progress -->
+        <section class="realm-card">
+          <div class="realm-name" id="realmName">Mortal Scholar</div>
+          <div class="qi-display">
+            <span class="qi-label">Qi</span>
+            <span class="qi-value" id="qiValue">0</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="next-realm" id="nextRealmInfo">Next realm at 100 Qi</div>
+        </section>
+
+        <!-- Action Buttons -->
+        <div class="actions">
+          <button id="cultivateBtn" class="btn cultivate-btn">
+            <span class="btn-icon">🔥</span> Cultivate
+          </button>
+          <button id="meditateBtn" class="btn meditate-btn">
+            <span class="btn-icon">🧘</span> Meditate
+          </button>
+        </div>
+
+        <!-- Meditation Timer -->
+        <div
+          class="meditation-timer"
+          id="meditationTimer"
+          style="display: none"
+        >
+          <div class="timer-ring"><span id="timerText">10</span>s</div>
+          <p class="timer-label">Absorbing ambient knowledge…</p>
+        </div>
+
+        <!-- Breakthrough notification overlay -->
+        <div class="breakthrough-overlay" id="breakthroughOverlay">
+          <div class="breakthrough-text">
+            <span class="breakthrough-icon">✨</span>
+            <span id="breakthroughMessage">Realm Breakthrough!</span>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p class="footer-text">Click to cultivate · Meditate for bonus Qi</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
 
