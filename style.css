@@ -1,0 +1,260 @@
+/* style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0b0c1a;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  color: #e0d7c6;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: radial-gradient(circle at 30% 30%, #1a1c3a 0%, #0b0c1a 90%);
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+/* Header */
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f0d48c;
+  text-shadow: 0 0 12px #f0d48c55;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  color: #8a8fb0;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  text-align: center;
+}
+
+/* Realm Card */
+.realm-card {
+  background: rgba(20, 20, 40, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid #4e3b5e;
+  border-radius: 24px;
+  padding: 1.5rem;
+  width: 100%;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 0 20px rgba(180, 140, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.realm-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #c7b3e5;
+  text-shadow: 0 0 8px #8a6bb0;
+  transition: all 0.5s;
+}
+
+.qi-display {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.qi-label {
+  font-size: 1rem;
+  color: #b0a0c0;
+}
+
+.qi-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffd98c;
+  text-shadow: 0 0 15px #f0c040;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #2a2540;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #5e4b7a;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #5c8aff, #a874ff);
+  box-shadow: 0 0 12px #6b5cff;
+  transition: width 0.3s ease;
+  border-radius: 6px;
+}
+
+.next-realm {
+  font-size: 0.85rem;
+  color: #9a8bc0;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.9rem 1.8rem;
+  border-radius: 18px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.2s;
+  background: #1f1d36;
+  color: #e0d7c6;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.cultivate-btn {
+  background: linear-gradient(135deg, #3a2e4f, #1f1d36);
+  border: 1px solid #8b7fa8;
+}
+
+.cultivate-btn:hover {
+  box-shadow:
+    0 0 20px #9b7bff88,
+    0 0 8px #d4a0ff;
+}
+
+.meditate-btn {
+  background: linear-gradient(135deg, #2e3b4f, #1b2330);
+  border: 1px solid #7f9ba8;
+}
+
+.meditate-btn:hover {
+  box-shadow:
+    0 0 20px #7fb0ff88,
+    0 0 8px #a0d4ff;
+}
+
+.btn-icon {
+  font-size: 1.3rem;
+}
+
+/* Meditation Timer */
+.meditation-timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timer-ring {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #5c7aff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #c0d0ff;
+  text-shadow: 0 0 12px #5c7aff;
+  background: rgba(20, 30, 50, 0.7);
+  box-shadow: 0 0 25px #3b4fa0;
+}
+
+.timer-label {
+  color: #a0b0cc;
+  font-size: 0.9rem;
+}
+
+/* Breakthrough overlay */
+.breakthrough-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.breakthrough-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.breakthrough-text {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #ffd966;
+  text-shadow:
+    0 0 30px #ffa500,
+    0 0 60px #ff8c00;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: breakthroughPulse 0.8s ease-out;
+}
+
+.breakthrough-icon {
+  font-size: 4rem;
+}
+
+@keyframes breakthroughPulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Footer */
+.footer-text {
+  color: #6a6080;
+  font-size: 0.8rem;
+  text-align: center;
+}
